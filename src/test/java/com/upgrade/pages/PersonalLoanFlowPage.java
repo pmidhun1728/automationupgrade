@@ -125,7 +125,7 @@ public class PersonalLoanFlowPage {
    public void createAccount(){
       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
       emailTextBox.sendKeys(fakerClass.getFirstName()+"@gmail.com");
-      passwordTextBox.sendKeys("5876967895");
+      passwordTextBox.sendKeys("Midhun@2734");
       checkBox.click();
      Assert.assertTrue(checkBox.isEnabled(), "checkbox is Enabled");
      getCheckYourRateButton.click();
