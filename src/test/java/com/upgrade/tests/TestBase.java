@@ -24,12 +24,7 @@ public class TestBase {
         if ("chrome".equalsIgnoreCase(browser)) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            options.setBinary("upgrade/chromedriver");
-//            options.addArguments("--incognito");
-            options.addArguments("--disable-images");
-            options.addArguments("blink-settings=imagesEnabled=false");
-            options.addArguments("--disable-css");
-            options.addArguments("--disable-extensions");
+            options.addArguments("--incognito");
             driver = new ChromeDriver(options);
         } else if ("firefox".equalsIgnoreCase(browser)) {
             WebDriverManager.firefoxdriver().setup();
@@ -39,11 +34,9 @@ public class TestBase {
         } else {
             throw new RuntimeException("Browser not supported: " + browser);
         }
-
         driver.manage().window().maximize();
         driver.get(url);
     }
-
 
     @AfterClass
     public void logOut() {
