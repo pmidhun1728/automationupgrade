@@ -48,6 +48,9 @@ public class PersonalLoanFlowPage {
    @FindBy(xpath = "//input[@id='geosuggest__input--borrowerStreet']")
    public WebElement borrowersAddress;
 
+   @FindBy(xpath = "//li[@id='ChIJCUEMWK059YgRx7uySfnyFQg']//span[1]")
+   public WebElement borrowersAddressByIndex;
+
    @FindBy(xpath = "//input[@name='borrowerCity']")
    public WebElement borrowersCity;
 
@@ -63,6 +66,33 @@ public class PersonalLoanFlowPage {
    @FindBy(xpath = "//span[@class='contentWrapper']")
    public WebElement borrowersContinue;
 
+   @FindBy(xpath = "//h1[text()='How much money do you make in a year?']")
+   public WebElement howMuchMoneyTextVerification;
+
+   @FindBy(xpath = "//input[@name='borrowerIncome']")
+   public WebElement individualAnnualIncomeTextBox;
+
+   @FindBy(xpath = "//input[@name='borrowerAdditionalIncome']")
+   public WebElement additionalAnnualIncomeTextBox;
+
+   @FindBy(xpath = "//span[@class='contentWrapper']")
+   public WebElement annualIncomeSubmit;
+
+   @FindBy(xpath = "//input[@name='username']")
+   public WebElement emailTextBox;
+
+   @FindBy(xpath = "//input[@name='password']")
+   public WebElement passwordTextBox;
+
+   @FindBy(xpath = "//div[@class='sc-iKOmoZ sc-ckdEwu kdFYBU kLczNJ']")
+   public WebElement checkBox;
+
+   @FindBy(xpath = "//span[@class='contentWrapper']")
+   public WebElement getCheckYourRateButton;
+
+   @FindBy(xpath = "//h2[text()=\"We're sorry, we were unable to approve you.\"]")
+   public WebElement verifyText;
+
 
    public void enterIndividualDetails(){
       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -72,7 +102,8 @@ public class PersonalLoanFlowPage {
 
       borrowersFirstName.sendKeys(fakerClass.getFirstName());
       borrowersLastName.sendKeys(fakerClass.getLastName());
-      borrowersAddress.sendKeys(fakerClass.getStreetAddress());
+      borrowersAddress.sendKeys("123cdwcb");
+//      borrowersAddressByIndex.click();
       borrowersCity.sendKeys(fakerClass.getCity());
       borrowersState.sendKeys(fakerClass.getStateAbbreviation());
       borrowersZipCode.sendKeys(fakerClass.getZipCode());
@@ -82,6 +113,25 @@ public class PersonalLoanFlowPage {
       borrowersContinue.submit();
    }
 
+   public void enterAnnualIncome(){
+      WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+      Assert.assertTrue(howMuchMoneyTextVerification.isDisplayed(), "Annual Income text is verified");
+      individualAnnualIncomeTextBox.sendKeys(fakerClass.getLoanAmount());
+      additionalAnnualIncomeTextBox.sendKeys(fakerClass.getLoanAmount());
+      wait.until(ExpectedConditions.elementToBeClickable(annualIncomeSubmit));
+      annualIncomeSubmit.click();
+   }
+
+   public void createAccount(){
+      WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+      emailTextBox.sendKeys(fakerClass.getFirstName()+"@gmail.com");
+      passwordTextBox.sendKeys("5876967895");
+      checkBox.click();
+     Assert.assertTrue(checkBox.isEnabled(), "checkbox is Enabled");
+     getCheckYourRateButton.click();
+     wait.until(ExpectedConditions.elementToBeClickable(verifyText));
+     Assert.assertTrue(verifyText.isDisplayed(), "We're sorry, we were unable to approve you. is displayed");
+   }
 
    public void enterLoanDetails() {
       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -91,7 +141,6 @@ public class PersonalLoanFlowPage {
       loanPurposeDropDown.click();
       payOffCreditCardsDropDownValue.click();
       checkYourRateButton.click();
-
    }
 
    public PersonalLoanFlowPage(WebDriver driver) {

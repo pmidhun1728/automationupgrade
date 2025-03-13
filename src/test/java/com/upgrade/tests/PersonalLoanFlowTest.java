@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.BossWebUtil;
 
-public class PersonalLoanFlowTest extends TestBase {
+public class PersonalLoanFlowTest extends BaseTest {
     private PersonalLoanFlowPage personalLoanFlowPage;
     private BossWebUtil bossWebUtil;
 
@@ -23,5 +23,7 @@ public class PersonalLoanFlowTest extends TestBase {
         personalLoanFlowPage.clickPersonalLoansDropDown();
         personalLoanFlowPage.enterLoanDetails();
         personalLoanFlowPage.enterIndividualDetails();
+        personalLoanFlowPage.enterAnnualIncome();
+        personalLoanFlowPage.createAccount();
     }
 }
