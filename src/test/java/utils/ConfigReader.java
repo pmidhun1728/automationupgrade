@@ -6,14 +6,15 @@ import java.util.Properties;
 
 public class ConfigReader {
     private static final Properties properties;
+static{
 
-    static {
-       String environment="qa";
-       String fileName = "src/test/resources/configuration.properties";
-        if(environment.equals("qa")){
-            fileName="src/test/resources/configuration-qa.properties";
+    String environment = System.getProperty("environment", System.getenv("ENVIRONMENT"));
 
-        }
+    if(environment==null || environment.isEmpty()){
+        environment="qa";
+    }
+
+    String fileName = "src/test/resources/configuration.properties-" + environment+".properties";
         try {
             FileInputStream fileInputStream = new FileInputStream(fileName);
             properties = new Properties();

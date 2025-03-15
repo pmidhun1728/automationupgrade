@@ -1,4 +1,4 @@
-package com.upgrade.tests.api;
+package com.upgrade.api.tests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.upgrade.common.BaseTestAPI;

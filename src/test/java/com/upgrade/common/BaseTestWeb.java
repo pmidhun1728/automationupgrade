@@ -6,19 +6,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ConfigReader;
 
-public class BaseTest {
+public class BaseTestWeb {
     private WebDriver driver;
-
-
-//    @BeforeClass
-//    public void beforeClass(){
-//        getDriver();
-//    }
-
 
     public WebDriver getDriver() {
         if(driver==null){

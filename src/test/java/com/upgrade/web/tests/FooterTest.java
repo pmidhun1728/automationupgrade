@@ -1,12 +1,12 @@
-package com.upgrade.tests.web;
+package com.upgrade.web.tests;
 
-import com.upgrade.common.BaseTest;
-import com.upgrade.pages.FooterPage;
+import com.upgrade.common.BaseTestWeb;
+import com.upgrade.web.pages.FooterPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class FooterTest extends BaseTest {
+public class FooterTest extends BaseTestWeb {
     private FooterPage footerPage;
     private WebDriver driver;
 

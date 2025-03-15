@@ -1,16 +1,15 @@
-package com.upgrade.tests.web;
+package com.upgrade.web.tests;
 
-import com.upgrade.common.BaseTest;
-import com.upgrade.pages.PersonalLoanFlowPage;
+import com.upgrade.common.BaseTestWeb;
+import com.upgrade.web.pages.PersonalLoanFlowPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.BossWebUtil;
 import utils.ScreenShotUtil;
 
-public class PersonalLoanFlowTest extends BaseTest {
+public class PersonalLoanFlowTest extends BaseTestWeb {
     private PersonalLoanFlowPage personalLoanFlowPage;
     private BossWebUtil bossWebUtil;
     private ScreenShotUtil screenShotUtil;

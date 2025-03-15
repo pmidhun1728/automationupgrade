@@ -1,4 +1,4 @@
-package com.upgrade.pages;
+package com.upgrade.web.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
