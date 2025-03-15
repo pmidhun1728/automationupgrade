@@ -1,6 +1,9 @@
 package com.upgrade.tests.web;
 
+import com.upgrade.common.BaseTest;
 import com.upgrade.pages.PersonalLoanFlowPage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,10 +14,11 @@ public class PersonalLoanFlowTest extends BaseTest {
     private PersonalLoanFlowPage personalLoanFlowPage;
     private BossWebUtil bossWebUtil;
     private ScreenShotUtil screenShotUtil;
+    private WebDriver driver;
 
     @BeforeClass
     public void initializePageObjects() {
-        bossWebUtil = new BossWebUtil(driver);
+        driver = getDriver();
         personalLoanFlowPage = new PersonalLoanFlowPage(driver);
     }
 

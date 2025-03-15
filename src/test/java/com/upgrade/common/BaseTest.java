@@ -1,4 +1,4 @@
-package com.upgrade.tests.web;
+package com.upgrade.common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,9 +11,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.ConfigReader;
 
 public class BaseTest {
-    protected WebDriver driver;
+    private WebDriver driver;
 
-    @BeforeClass
+
+//    @BeforeClass
+//    public void beforeClass(){
+//        getDriver();
+//    }
+
+
+    public WebDriver getDriver() {
+        if(driver==null){
+            setup();
+        }
+        return driver;
+    }
+
     public void setup() {
         String browser = ConfigReader.getProperty("browser");
         String url = ConfigReader.getProperty("url");
