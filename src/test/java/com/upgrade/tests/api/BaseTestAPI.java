@@ -1,4 +1,4 @@
-package com.upgrade.tests;
+package com.upgrade.tests.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,7 +18,7 @@ public class BaseTestAPI {
                 .header("Accept", "application/json");
     }
 
-    public Response getRequest(String endpoint) {
+    public Response getRequest(String endpoint){
         return request.get(endpoint);
     }
 

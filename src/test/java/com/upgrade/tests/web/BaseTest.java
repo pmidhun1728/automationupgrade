@@ -1,4 +1,4 @@
-package com.upgrade.tests;
+package com.upgrade.tests.web;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

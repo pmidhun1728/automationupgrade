@@ -1,4 +1,4 @@
-package com.upgrade.tests;
+package com.upgrade.tests.web;
 
 import com.upgrade.pages.PersonalLoanFlowPage;
 import org.testng.Assert;

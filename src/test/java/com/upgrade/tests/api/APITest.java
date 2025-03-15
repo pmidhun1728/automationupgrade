@@ -1,4 +1,4 @@
-package com.upgrade.tests;
+package com.upgrade.tests.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.path.json.JsonPath;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utils.POJO;
 
-public class API extends BaseTestAPI {
+public class APITest extends BaseTestAPI {
    BaseTestAPI baseTestAPI;
     POJO pojo;
 
